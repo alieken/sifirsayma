@@ -1,0 +1,22 @@
+def search_board(board):
+    sifirsayilari=list()    #bos bir dizi açtık
+    sifir=0
+    temp=-1
+    for i in range(len(board)):
+        for j in range(len(board[i])):
+            if board[i][j]==0:      #eger sifir bulursa
+                sifir=sifir+1       #sifir sayisini arttir
+                if sifir>temp:      #artan sifir sayisi tutulandan büyük olursa degistir
+                    temp=sifir
+            else:
+                sifir=0         #sayac sifirlama islemi
+        if temp==-1:            #temp hiç değişmemişse
+            sifirsayilari.append(0)
+        else:
+            sifirsayilari.append(temp)      #temp degismisse
+            sifir=0                         #sayac sifirlandi
+            temp=-1                         #temp ilk haline getirildi
+    print(sifirsayilari)
+
+mat = [[0, 0, 0,6,1,0,0,0,0,0],[6], [0, 0, 0],[1,1,1,0,0,0,0,4,3,2]]
+search_board(mat)
